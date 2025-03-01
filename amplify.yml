@@ -1,0 +1,36 @@
+version: 1.0
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci  # Or yarn install, depending on your project
+    build:
+      commands:
+        - npm run build  # Or yarn build, etc.
+  artifacts:
+    baseDirectory: dist  # Or 'build', 'public', or whatever your build output directory is
+    files:
+      - '**/*'
+  cacheControl:
+    - pattern: '/**/*.{js,jsx,ts,tsx}'
+      maxAge: '31536000'
+      cacheControl: 'public, max-age=31536000, immutable'
+      contentType: 'application/javascript'
+    - pattern: '/**/*.{css,scss}'
+      maxAge: '31536000'
+      cacheControl: 'public, max-age=31536000, immutable'
+      contentType: 'text/css'
+    - pattern: '/**/*.{png,jpg,jpeg,gif,svg,webp}'
+      maxAge: '31536000'
+      cacheControl: 'public, max-age=31536000, immutable'
+      contentType: 'image/*'
+    - pattern: 'index.html'
+      maxAge: '300'  # Short cache for the main HTML file
+      cacheControl: 'public, max-age=300'
+    - pattern: '*'  # Default cache
+      maxAge: '300'
+      cacheControl: 'public, max-age=300'
+  customRules:
+    - source: '/<'  # This is a catch-all for SPAs (see explanation below)
+      target: '/index.html'
+      status: '200'
