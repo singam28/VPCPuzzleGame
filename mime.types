@@ -1,0 +1,27 @@
+text/html                             html htm shtml
+text/css                              css
+text/xml                              xml
+image/gif                             gif
+image/jpeg                            jpeg jpg
+application/javascript                js
+application/atom+xml                    atom
+application/rss+xml                     rss
+image/png                             png
+image/svg+xml                         svg svgz
+text/plain                            txt
+text/x-component                      htc
+text/mathml                           mml
+image/x-icon                          ico
+text/vcard                            vcf
+application/xhtml+xml                 xhtml
+application/octet-stream              bin
+application/java-archive              jar
+application/x-shockwave-flash         swf
+application/pdf                           pdf
+application/x-font-ttf                ttf ttc
+application/vnd.ms-fontobject         eot
+application/font-woff                   woff
+application/font-woff2                  woff2
+application/json                          json
+
+# Add any other custom MIME types your project uses here
